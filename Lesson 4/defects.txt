@@ -1,0 +1,13 @@
+Синтаксическая ошибка в функцции
+def capitilize(self, string: str) -> str:
+
+Функция чуствительна к регистру
+def test_pos_contains(string_utils):
+    assert string_utils.contains("SkyPro", "S") == True
+    assert string_utils.contains("SkyPro", "s") == False
+
+Функция не воспринимает пробел или числа как символ, поэтому, если вводимый текст заканчивается на пробел, функция не даст ожидаемый результат
+def test_pos_end_with(string_utils):
+
+    # assert string_utils.starts_with("Hello World ", " ") == True #neg
+    # assert string_utils.starts_with("1245", "5") == True #neg
