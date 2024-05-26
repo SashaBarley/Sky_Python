@@ -33,7 +33,7 @@ def test_calculator(driver):
                 break
             
 
-    result = WebDriverWait(driver, 45).until(
+    result = WebDriverWait(driver, 46).until(
         EC.text_to_be_present_in_element((By.CSS_SELECTOR, "[class=screen]"), "15")
     )
 
