@@ -12,7 +12,22 @@ def test_zip_code_red():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
     first_page = FirstPage(driver)
-    first_page.enter_form()
+
+    form_data = {
+        '[name=first-name]': 'Иван',
+        '[name=last-name]': 'Петров',
+        '[name=address]': 'Ленина, 55-3',
+        '[name=e-mail]': 'test@skypro.com',
+        '[name=phone]': '+7985899998787',
+        '[name=zip-code]': '',  # Здесь оставляем пустым для проверки
+        '[name=city]': 'Москва',
+        '[name=country]': 'Россия',
+        '[name=job-position]': 'QA',
+        '[name=company]': 'SkyPro',
+    }
+
+    first_page.enter_form(form_data)
+    first_page.click_form()
 
     second_page = SecondPage(driver)
     q = second_page.check_color_red()
